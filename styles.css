@@ -540,25 +540,6 @@ ol {
   color: var(--white);
 }
 
-.recommended {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  padding: 0.65rem 1rem;
-  background: var(--white);
-  color: var(--teal-deep);
-  font-size: 0.75rem;
-  font-weight: 750;
-  letter-spacing: 0.07em;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.package-card-featured .package-topline {
-  margin-top: 1.85rem;
-}
-
 .package-topline {
   display: flex;
   justify-content: space-between;
@@ -642,86 +623,8 @@ ol {
   line-height: 1.55;
 }
 
-.package-scale {
-  margin-top: 1.6rem;
-  padding-top: 1rem;
-  border-top: 1px solid currentColor;
-  font-size: 0.8rem;
-  font-weight: 700;
-}
-
 .proposal {
   border-bottom: 1px solid var(--line);
-}
-
-.proposal-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  border-top: 1px solid var(--ink);
-  border-bottom: 1px solid var(--line);
-}
-
-.proposal-grid article {
-  padding: clamp(2rem, 4vw, 4rem) clamp(1.5rem, 4vw, 4rem) clamp(2rem, 4vw, 4rem) 0;
-}
-
-.proposal-grid article + article {
-  padding-right: 0;
-  padding-left: clamp(1.5rem, 4vw, 4rem);
-  border-left: 1px solid var(--line);
-}
-
-.proposal-grid h3 {
-  max-width: 12ch;
-  font-size: clamp(2rem, 3.3vw, 3.6rem);
-  font-weight: 550;
-}
-
-.proposal-list {
-  margin-top: 2.25rem;
-}
-
-.proposal-list li {
-  position: relative;
-  padding: 0.9rem 0 0.9rem 1.35rem;
-  border-top: 1px solid var(--line);
-  color: var(--muted);
-  line-height: 1.5;
-}
-
-.proposal-list li::before {
-  position: absolute;
-  top: 1.25rem;
-  left: 0;
-  width: 0.5rem;
-  height: 1px;
-  background: var(--teal);
-  content: "";
-}
-
-.proposal-plan {
-  margin-top: clamp(5rem, 9vw, 9rem);
-}
-
-.proposal-plan-heading {
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(22rem, 0.85fr);
-  gap: clamp(3rem, 8vw, 8rem);
-  align-items: end;
-  margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
-}
-
-.proposal-plan-heading h3 {
-  max-width: 13ch;
-  font-size: clamp(2.8rem, 5vw, 5.8rem);
-  font-weight: 540;
-}
-
-.proposal-plan-heading p {
-  max-width: 38rem;
-  color: var(--muted);
-  font-size: clamp(1rem, 1.2vw, 1.2rem);
-  line-height: 1.6;
 }
 
 .ai-focus {
@@ -1005,8 +908,6 @@ ol {
   .split-heading,
   .loss-grid,
   .strength,
-  .proposal-grid,
-  .proposal-plan-heading,
   .ai-focus {
     grid-template-columns: 1fr;
   }
@@ -1014,17 +915,6 @@ ol {
   .strength-image,
   .strength-image img {
     min-height: 30rem;
-  }
-
-  .proposal-grid article,
-  .proposal-grid article + article {
-    padding-right: 0;
-    padding-left: 0;
-  }
-
-  .proposal-grid article + article {
-    border-top: 1px solid var(--line);
-    border-left: 0;
   }
 
   .plan-columns {
@@ -1193,10 +1083,6 @@ ol {
     min-height: auto;
     border-top: 1px solid var(--line);
     border-right: 0;
-  }
-
-  .proposal-plan-heading h3 {
-    font-size: clamp(2.6rem, 12vw, 3.8rem);
   }
 
   .cta-phone strong {
