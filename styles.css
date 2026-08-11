@@ -54,6 +54,7 @@ svg {
 h1,
 h2,
 h3,
+h4,
 p,
 figure,
 dl,
@@ -63,7 +64,8 @@ dd {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   line-height: 0.98;
   letter-spacing: -0.05em;
 }
@@ -310,7 +312,6 @@ ol {
 
 .section-heading h2,
 .strength-copy h2,
-.dominance h2,
 .final-cta h2 {
   font-size: clamp(3.1rem, 6vw, 6.8rem);
   font-weight: 540;
@@ -318,7 +319,6 @@ ol {
 
 .section-heading p,
 .strength-copy > p,
-.dominance-copy > p,
 .final-cta > div > p {
   color: var(--muted);
   font-size: clamp(1.05rem, 1.3vw, 1.27rem);
@@ -699,6 +699,31 @@ ol {
   content: "";
 }
 
+.proposal-plan {
+  margin-top: clamp(5rem, 9vw, 9rem);
+}
+
+.proposal-plan-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(22rem, 0.85fr);
+  gap: clamp(3rem, 8vw, 8rem);
+  align-items: end;
+  margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.proposal-plan-heading h3 {
+  max-width: 13ch;
+  font-size: clamp(2.8rem, 5vw, 5.8rem);
+  font-weight: 540;
+}
+
+.proposal-plan-heading p {
+  max-width: 38rem;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  line-height: 1.6;
+}
+
 .ai-focus {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(20rem, 0.85fr);
@@ -802,7 +827,7 @@ ol {
   text-transform: uppercase;
 }
 
-.plan-columns h3 {
+.plan-columns h4 {
   margin-top: 0.5rem;
   font-size: 2rem;
   font-weight: 560;
@@ -826,84 +851,6 @@ ol {
   font-size: 0.88rem;
   line-height: 1.6;
   text-align: center;
-}
-
-.dominance {
-  display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: clamp(3rem, 8vw, 8rem);
-  width: 100%;
-  max-width: none;
-  background: var(--teal-deep);
-  color: var(--white);
-}
-
-.dominance-copy {
-  padding-left: max(0px, calc((100vw - var(--max)) / 2));
-}
-
-.dominance h2 {
-  max-width: 10ch;
-}
-
-.dominance-copy > p {
-  max-width: 36rem;
-  margin-top: 2rem;
-  color: rgba(255, 255, 255, 0.72);
-}
-
-.question-list {
-  border-top: 1px solid rgba(255, 255, 255, 0.34);
-}
-
-.question-list article {
-  display: grid;
-  grid-template-columns: 3rem 1fr;
-  gap: 1rem;
-  padding: 1.35rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
-}
-
-.question-list span {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 0.75rem;
-}
-
-.question-list p {
-  font-size: clamp(1.08rem, 1.4vw, 1.35rem);
-  line-height: 1.42;
-}
-
-.dominance-visual {
-  grid-column: 1 / -1;
-  position: relative;
-  height: min(48vw, 43rem);
-  min-height: 28rem;
-  margin: 1rem max(0px, calc((100vw - var(--max)) / 2)) 0;
-  overflow: hidden;
-}
-
-.dominance-visual img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.dominance-visual::after {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 62%, rgba(4, 18, 15, 0.66));
-  content: "";
-  pointer-events: none;
-}
-
-.dominance-visual figcaption {
-  position: absolute;
-  z-index: 1;
-  right: 1.5rem;
-  bottom: 1.25rem;
-  left: 1.5rem;
-  font-size: 0.84rem;
 }
 
 .final-cta {
@@ -930,16 +877,46 @@ ol {
   color: rgba(255, 255, 255, 0.77);
 }
 
-.button-light {
+.cta-phone {
+  display: grid;
   flex: 0 0 auto;
-  border-color: var(--white);
-  background: var(--white);
-  color: var(--teal-deep);
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "label icon"
+    "number number";
+  min-width: min(34rem, 43vw);
+  padding: 1rem 0 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.72);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.72);
+  transition: opacity 180ms ease;
 }
 
-.button-light:hover {
-  background: transparent;
-  color: var(--white);
+.cta-phone span {
+  grid-area: label;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cta-phone strong {
+  grid-area: number;
+  margin-top: 0.35rem;
+  font-size: clamp(2.75rem, 4.6vw, 5.2rem);
+  font-weight: 540;
+  letter-spacing: -0.065em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.cta-phone svg {
+  grid-area: icon;
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.cta-phone:hover {
+  opacity: 0.72;
 }
 
 .site-footer {
@@ -1000,7 +977,7 @@ ol {
 
 @media (max-width: 58rem) {
   .hero {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     padding-top: 4rem;
   }
 
@@ -1013,7 +990,7 @@ ol {
   }
 
   .audit-numbers {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .audit-numbers > div:nth-child(2) {
@@ -1028,8 +1005,8 @@ ol {
   .split-heading,
   .loss-grid,
   .strength,
-  .dominance,
   .proposal-grid,
+  .proposal-plan-heading,
   .ai-focus {
     grid-template-columns: 1fr;
   }
@@ -1051,7 +1028,7 @@ ol {
   }
 
   .plan-columns {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .plan-columns article:nth-child(2) {
@@ -1062,20 +1039,14 @@ ol {
     border-top: 1px solid var(--line);
   }
 
-  .dominance-copy {
-    padding-left: 0;
-  }
-
-  .dominance-visual {
-    grid-column: auto;
-    height: 32rem;
-    margin-right: 0;
-    margin-left: 0;
-  }
-
   .final-cta {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .cta-phone {
+    width: 100%;
+    min-width: 0;
   }
 }
 
@@ -1157,7 +1128,6 @@ ol {
 
   .section-heading h2,
   .strength-copy h2,
-  .dominance h2,
   .final-cta h2 {
     font-size: clamp(2.8rem, 13vw, 4rem);
   }
@@ -1225,13 +1195,12 @@ ol {
     border-right: 0;
   }
 
-  .question-list article {
-    grid-template-columns: 2rem 1fr;
+  .proposal-plan-heading h3 {
+    font-size: clamp(2.6rem, 12vw, 3.8rem);
   }
 
-  .dominance-visual {
-    min-height: 22rem;
-    height: 25rem;
+  .cta-phone strong {
+    font-size: clamp(2.55rem, 13vw, 4rem);
   }
 
   .site-footer {
